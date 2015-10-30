@@ -4,13 +4,17 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{category.name}}">
+<ion-view view-title="{{category}}">
   <ion-content class="padding">
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="product in products" type="item-text-wrap" href="#/app/category/{{category.name}}/{{product.id}}">
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="Search" ng-model="searchText">
+    </label>
+    <ion-list class="list-card">
+      <ion-item class="item item-icon-right" ng-repeat="product in products | filter:searchText" type="item-text-wrap" href="#/app/calculator/{{category}}/{{product.id}}">
         <!-- <img ng-src="{{chat.face}}"> -->
-        <h2>{{product.name}}</h2>
-        <p>{{product.caffeine}} mg</p>
+        {{product.name}}
+        <i class="icon ion-plus-round"></i>
         <ion-option-button class="button-assertive" ng-click="remove(chat)">
           Delete
         </ion-option-button>

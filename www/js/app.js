@@ -67,7 +67,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   //   }
   // })
 
-  .state('app.chats', {
+  .state('app.categories', {
       url: '/categories',
       views: {
         'menuContent': {
@@ -85,13 +85,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('app.product', {
-      url: '/categories/:category/:productId',
-      views:{
-        'menuContent': {
-          templateUrl: 'templates/product.html',
-          controller: 'ProductCtrl'
-        } 
+    .state('app.calculator', {
+      url: '/calculator/:category/:productId',
+      views: {
+        'menuContent':{
+            templateUrl: 'templates/calculator.html',
+            controller: 'CalculatorCtrl'
+        }
       }
     })
 

@@ -8,8 +8,9 @@
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
-      <ion-nav-buttons side="right">
-        <a class="button button-icon icon ion-settings" href="#/app/categories">
+      {{addIcon}}
+      <ion-nav-buttons side="right" ng-show="addIcon">
+        <a class="button button-icon icon ion-plus-circled" href="#/app/categories">
         </a>
       </ion-nav-buttons>
     </ion-nav-bar>
@@ -25,8 +26,8 @@
         <ion-item menu-close href="#/app/main">
           Home
         </ion-item>
-        <ion-item menu-close ng-click="login()">
-          Login
+        <ion-item menu-close href="#/app/categories">
+          Categories
         </ion-item>
       </ion-list>
     </ion-content>
